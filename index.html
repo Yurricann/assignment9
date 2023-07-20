@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <title>Assignment 9</title>
+</head>
+<body>
+    
+    <main class="position-relative">
+        <div class="container d-flex flex-column justify-content-center py-5 align-items-center">
+            <h1 class="logo text-center position-relative mb-3 d-inline-block">Bookmarker</h1>
+    
+            <div class="bookmark-options d-flex my-5 py-4 w-100 flex-column justify-content-center align-items-center gap-4">
+                
+                <h2 class="text-center py-2"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+                
+                <div class="sitename w-100 d-flex flex-column position-relative">
+                    <label for="bookmark-name" class="py-2 fw-bold"><i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label>
+                    <input onkeyup="chk()" type="text" name="bookmark-name" id="bookmarkName" placeholder="Bookmark Name" class="w-100 form-control focusing">
+                    <div id="tooltip" class="tip justify-content-center align-items-center p-2">
+                        Must contain at least 3 letters & Cannot be duplicated
+                    </div>
+                </div>
+    
+                <div class="siteUrl w-100 d-flex flex-column position-relative">
+                    <label for="bookmark-url" class="py-2 fw-bold"><i class="fa-solid fa-link pe-2"></i> Site URL</label>
+                    <input oninput="chkURL()" type="text" name="bookmark-url" id="siteUrl" placeholder="Website URL" class="w-100 form-control focusing">
+                    <div id="tooltipUrl" class="tip justify-content-center align-items-center p-2">
+                        Must be a valid URL
+                    </div>
+                </div>
+    
+                <button onclick="submission()" class="btn btnSubmit px-5">Submit</button>
+            </div>
+    
+            <table class="table text-center bg-light">
+                <thead>
+                    <tr>
+                        <th>Index</th> 
+                        <th>Website Name</th> 
+                        <th>Visit</th> 
+                        <th>Delete</th> 
+                    </tr>
+                </thead>
+                <tbody id="bookmarks">
+                    
+                </tbody>
+                
+            </table>
+        </div>
+
+        <div id="checkbox" class="invalidBox justify-content-center align-items-center position-absolute">
+            <div class="box-content d-flex flex-column justify-content-center rounded-2 shadow bg-white p-3">
+                <div class="topSide d-flex justify-content-between align-items-center pb-4">
+                    <div class="circles d-flex gap-2">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <button onclick="closeBtn()" class="btn"><i class="fa-solid fa-xmark close fs-3"></i></button>
+                </div>
+                <p>Site Name or Url is not valid, Please follow the rules below :</p>
+                <ul class="list-unstyled">
+                    <li><i class="fa-regular fa-circle-right p-2"></i>Site name must contain at least 3 characters</li>
+                    <li><i class="fa-regular fa-circle-right p-2"></i>Site URL must be a valid one</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+
+    
+
+    <script src="js/main.js"></script>
+</body>
+</html>
